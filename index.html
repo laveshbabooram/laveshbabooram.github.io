@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lavesh Babooram - Personal Academic Website & Portfolio" />
+  <title>Lavesh Babooram | Portfolio</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- Background Glow Effects -->
+  <div class="bg-glow top-left"></div>
+  <div class="bg-glow bottom-right"></div>
+  <div class="cursor-glow"></div>
+
+  <nav class="navbar">
+    <a href="#" class="nav-brand">LB.</a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#publications" class="nav-link">Publications</a>
+    </div>
+  </nav>
+
+  <div class="hero-bg-wrapper">
+    <div class="container">
+      <!-- HERO SECTION -->
+      <section id="hero" class="hero-section">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="pulse-dot"></span> System Online
+          </div>
+          <h1 class="hero-title">Lavesh <span class="text-accent">Babooram</span><span
+              style="font-size: 0.4em; color: var(--text-muted); font-family: var(--font-mono); font-weight: 500; vertical-align: middle; margin-left: 15px; letter-spacing: 0;">,
+              RPEM | MSc | BEng | Author</span></h1>
+          <h2 class="hero-subtitle type-effect"><span id="typewriter-text"></span><span class="cursor"></span></h2>
+          <p class="hero-description">
+            Bridging the gap between telecommunications systems and artificial intelligence. Specializing in network
+            traffic analysis, QoS/QoE analytics, network automation and real-time multimedia communications.
+          </p>
+          <div class="hero-actions">
+            <a href="#" id="btn-download-cv" class="btn btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download CV
+            </a>
+            <div class="social-links">
+              <a href="https://mu.linkedin.com/in/lavesh-babooram" target="_blank" class="social-icon">LinkedIn</a>
+              <a href="https://orcid.org/0000-0001-6403-3395" target="_blank" class="social-icon">ORCID</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-avatar">
+          <div class="avatar-container glass-card">
+            <!-- Placeholder for Avatar -->
+            <img src="./profile-photo.jpg" alt="Lavesh Babooram" class="avatar-img" />
+            <div class="avatar-overlay"></div>
+          </div>
+      </section>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="content-section">
+      <h2 class="section-title"><span class="terminal-prompt">></span> ./about_me.sh</h2>
+
+      <div class="timeline-track-container">
+        <!-- Floating Navigation Buttons -->
+        <button class="timeline-nav-btn nav-btn-left" aria-label="Scroll Left"
+          style="opacity: 0; pointer-events: none;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="timeline-nav-btn nav-btn-right" aria-label="Scroll Right"
+          style="opacity: 0; pointer-events: none;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="timeline-track">
+          <!-- The Glowing Axis line -->
+          <div class="timeline-line"></div>
+
+          <!-- 1998: Born in Mauritius -->
+          <div class="timeline-node-item node-bottom" style="margin-left: 20px;">
+            <div class="timeline-circle"></div>
+            <div class="timeline-card glass-card hover-glow">
+              <div class="timeline-card-year">1998</div>
+              <h5 class="timeline-card-title">Born in Mauritius</h5>
+              <p class="timeline-card-desc">No absolute clue about what I should put as description so I'm just
+                gonna leave this here.</p>
+            </div>
+          </div>
+
+          <!-- 2005: Curiosity -->
+          <div class="timeline-node-item node-top">
+            <div class="timeline-circle"></div>
+            <div class="timeline-card glass-card hover-glow">
+              <div class="timeline-card-media">
+                <img src="/about-curiosity.jpg" alt="Curiosity" onerror="this.parentElement.style.display='none';">
+              </div>
+              <div class="timeline-card-year">2005</div>
+              <h5 class="timeline-card-title">Curiosity</h5>
+              <p class="timeline-card-desc">Where it all began. Check out my smile in front of the computer. Says it
+                all.</p>
+            </div>
+          </div>
+
+          <!-- 2017-2021: B.Eng. Degree -->
+          <div class="timeline-node-item node-bottom">
+            <div class="timeline-circle"></div>
+            <div class="timeline-card glass-card hover-glow">
+              <div class="timeline-card-media">
+                <img src="/about-medal.jpg" alt="Gold Medal" onerror="this.parentElement.style.display='none';">
+              </div>
+              <div class="timeline-card-year">2017 - 2021</div>
+              <h5 class="timeline-card-title">B.Eng. (Hons) Degree</h5>
+              <p class="timeline-card-desc">First Class Honours.</p>
+              <p class="timeline-card-desc">Awarded the Faculty Gold Medal for the best B.Eng.
+                Final Year Project.</p>
+            </div>
+          </div>
+
+          <!-- 2021: Infosys & Book -->
+          <div class="timeline-node-item node-top">
+            <div class="timeline-circle"></div>
+            <div class="timeline-card glass-card hover-glow">
+              <div class="timeline-card-media"
+                style="padding: 10px; display: flex; gap: 10px; align-items: center; justify-content: center; background: rgba(255,255,255,0.02);">
+                <img src="/about-infosys-logo.png" alt="Infosys"
+                  style="width: auto; height: 100%; max-height: 40px; object-fit: contain;">
+                <img src="/about-renault-logo.png" alt="Renault"
+                  style="width: auto; height: 100%; max-height: 40px; object-fit: contain;">
+              </div>
+              <div class="timeline-card-year">2021</div>
+              <h5 class="timeline-card-title">Infosys & First Book</h5>
+              <p class="timeline-card-desc">Worked in large-scale software development for Renault & published my first
+                book on
+                Real-Time Cloud and ML Applications.</p>
+            </div>
+          </div>
+
+          <!-- 2022: Joined Mauritius Telecom -->
+          <div class="timeline-node-item node-bottom">
+            <div class="timeline-circle"></div>
+            <div class="timeline-card glass-card hover-glow">
+              <div class="timeline-card-media" style="padding: 10px;">
+                <img src="/about-mt-logo.png" alt="Mauritius Telecom" onerror="this.parentElement.style.display='none';"
+                  style="object-fit: contain;">
+              </div>
+              <div class="timeline-card-year">2022</div>
+              <h5 class="timeline-card-title">Joined MT & Started MSc</h5>
+              <p class="timeline-card-desc">Joined Africa's leading Telecom operator as a network engineer.</p>
+              <p class="timeline-card-desc">Started MSc by Applied Research in Telecommunications.</p>
+            </div>
+          </div>
+
+          <!-- 2024: International Gold Award -->
+          <div class="timeline-node-item node-top">
+            <div class="timeline-circle"></div>
+            <div class="timeline-card glass-card hover-glow">
+              <div class="timeline-card-media">
+                <img src="/about-icqcc-award.jpg" alt="ICQCC Gold Award"
+                  onerror="this.parentElement.style.display='none';">
+              </div>
+              <div class="timeline-card-year">2024</div>
+              <h5 class="timeline-card-title">ICQCC Gold Award</h5>
+              <p class="timeline-card-desc">Secured Gold in Sri Lanka for "AI for Smart Service Monitoring in
+                Telecommunications" (in production use).</p>
+            </div>
+          </div>
+
+          <!-- 2024-2025: MSc & Books stack -->
+          <div class="timeline-node-item node-bottom">
+            <div class="timeline-circle"></div>
+            <div class="timeline-card glass-card hover-glow">
+              <div class="timeline-card-media">
+                <img src="/cover-ml-traffic.png" alt="Publications" onerror="this.style.opacity='0.5';">
+              </div>
+              <div class="timeline-card-year">2024 - 2025</div>
+              <h5 class="timeline-card-title">MSc Completion & Books</h5>
+              <p class="timeline-card-desc">Published books and journal papers on AI for telecommunications,
+                multimedia QoS, and network automation.</p>
+            </div>
+          </div>
+
+          <!-- 2026: CRPE Stage 2 (RPEM) -->
+          <div class="timeline-node-item node-top" style="margin-right: 20px;">
+            <div class="timeline-circle"></div>
+            <div class="timeline-card glass-card hover-glow">
+              <div class="timeline-card-year">2026</div>
+              <h5 class="timeline-card-title">RPEM Registered Engineer</h5>
+              <p class="timeline-card-desc">Registered as a Professional Engineer (RPEM) by the CRPE council of
+                Mauritius, solidifying technical leadership.</p>
+            </div>
+          </div>
+
+          <div class="timeline-node-item node-bottom" style="margin-right: 20px;">
+            <div class="timeline-circle"></div>
+            <div class="timeline-card glass-card hover-glow">
+              <div class="timeline-card-year">Presently</div>
+              <h5 class="timeline-card-title">Hmmm...</h5>
+              <p class="timeline-card-desc">What's next?</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Focus Areas banner in shell output style -->
+      <div class="focus-areas-banner glass-card" style="padding: 1rem 1.5rem;">
+        <span class="focus-areas-tag">Focus Areas</span>
+        <span class="focus-areas-text">QoE / QoS Monitoring • Video Quality Analytics • Autonomous Networks • AI
+          Research
+          in
+          Telecom</span>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION SECTION -->
+    <section id="experience" class="content-section">
+      <h2 class="section-title"><span class="terminal-prompt">></span> cat experience_log.txt</h2>
+      <div class="grid-layout">
+        <div class="experience-column">
+          <h3 class="column-title">Work Experience</h3>
+
+          <div class="timeline-item glass-card hover-glow bg-overlay-mt-eng">
+            <div class="timeline-date">Oct 2022 - Present</div>
+            <h4 class="timeline-role">Network Engineer</h4>
+            <div class="timeline-company">Mauritius Telecom Ltd.</div>
+            <ul class="timeline-details">
+              <li>Oversee end-to-end telecommunications services for enterprise customers.</li>
+              <li>Develop service monitoring and quality assurance tools for OTT platforms.</li>
+              <li>Design customer-centric solutions for Wi-Fi setups, optimising networks.</li>
+              <li>Drive network automation and standardization initiatives through AI.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item glass-card hover-glow bg-overlay-uom-trainer">
+            <div class="timeline-date">Mar 2024</div>
+            <h4 class="timeline-role">Short-Course Trainer</h4>
+            <div class="timeline-company">University of Mauritius</div>
+            <ul class="timeline-details">
+              <li>Designed and delivered training modules covering AI, machine learning, and web development.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item glass-card hover-glow bg-overlay-infosys">
+            <div class="timeline-date">Oct 2021 - Jul 2022</div>
+            <h4 class="timeline-role">System Engineer</h4>
+            <div class="timeline-company">Infosys Ltd.</div>
+            <ul class="timeline-details">
+              <li>Training in advanced Java and SQL for web project development.</li>
+              <li>Handled multiple projects concurrently for an automotive company (Renault).</li>
+              <li>Maintain, debug and correct application codes within quality standards.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item glass-card hover-glow bg-overlay-trainee">
+            <div class="timeline-date">Jul 2020 - Aug 2020</div>
+            <h4 class="timeline-role">Trainee</h4>
+            <div class="timeline-company">Mauritius Telecom Ltd.</div>
+            <ul class="timeline-details">
+              <li>Complaints management, fault debugging and software-oriented overview of networking architecture.</li>
+              <li>Exposure to FTTH, GPON, and optical distribution networks.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="experience-column">
+          <h3 class="column-title">Education</h3>
+
+          <div class="timeline-item glass-card hover-glow bg-overlay-uom-msc">
+            <div class="timeline-date">Jul 2022 - Oct 2024</div>
+            <h4 class="timeline-role">MSc by Applied Research in Telecommunications Engineering</h4>
+            <div class="timeline-company">University of Mauritius</div>
+            <p class="timeline-text">An AI Based Ubiquitous Network Traffic and QoS Analytics System for Real-Time
+              Multimedia Communications.</p>
+          </div>
+
+          <div class="timeline-item glass-card hover-glow bg-overlay-uom-beng">
+            <div class="timeline-date">Aug 2017 - Aug 2021</div>
+            <h4 class="timeline-role">B.Eng. (Hons) Telecommunications Engineering with Networking</h4>
+            <div class="timeline-company">University of Mauritius</div>
+            <p class="timeline-text">First Class Honours.</p>
+            <p class="timeline-text">Awarded Gold Medal for best Final Year Project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="content-section">
+      <h2 class="section-title"><span class="terminal-prompt">></span> ls ./projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card glass-card hover-glow bg-proj-genai-workshop">
+          <div class="project-header">
+            <div class="folder-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="project-year">2026</div>
+          </div>
+          <h3 class="project-title">Generative AI & Agentic Automation Workshop</h3>
+          <p class="project-desc">Co-developed and delivered a professional training workshop covering Generative AI,
+            Vision-Language Models, Agentic AI, local LLM deployment, automation workflows, and practical AI
+            applications. Designed hands-on demonstrations using multimodal AI, and autonomous agents.</p>
+          <div class="project-tags">
+            <span class="tag">Generative AI</span>
+            <span class="tag">Agentic AI</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">AI Education</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card hover-glow bg-proj-ai-edu">
+          <div class="project-header">
+            <div class="folder-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="project-year">2025 - Present</div>
+          </div>
+          <h3 class="project-title">AI Master Educational Platform</h3>
+          <p class="project-desc">Co-investigator for the development of an educational AI platform aimed at teaching
+            artificial intelligence and machine learning concepts through visual, practical, and interactive tools.</p>
+          <div class="project-tags">
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">Education</span>
+            <span class="tag">Software Engineering</span>
+            <span class="tag">Research</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card hover-glow bg-proj-ott-monitoring">
+          <div class="project-header">
+            <div class="folder-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="project-year">2024 - Present</div>
+          </div>
+          <h3 class="project-title">Automated OTT Service Monitoring Framework</h3>
+          <p class="project-desc">Built automation frameworks using Puppeteer, Selenium, and custom scripts to
+            continuously monitor streaming services, websites, and customer-facing platforms. Integrated results into
+            centralized monitoring dashboards.</p>
+          <div class="project-tags">
+            <span class="tag">Automation</span>
+            <span class="tag">Puppeteer</span>
+            <span class="tag">Selenium</span>
+            <span class="tag">Node.js</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card hover-glow bg-proj-service-monitoring">
+          <div class="project-header">
+            <div class="folder-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="project-year">2024 - 2025</div>
+          </div>
+          <h3 class="project-title">AI-Powered Internet Service Monitoring</h3>
+          <p class="project-desc">Designed and deployed a real-time quality of experience framework for live video
+            monitoring across Mauritius. Developed automation scripts with ML to predict outages. International Award
+            Winning Project.</p>
+          <div class="project-tags">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Video Quality</span>
+            <span class="tag">Automation</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card hover-glow bg-proj-qos-prediction">
+          <div class="project-header">
+            <div class="folder-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="project-year">2023 - 2024</div>
+          </div>
+          <h3 class="project-title">Real-Time Video QoS Prediction Platform</h3>
+          <p class="project-desc">Developed collaborative machine learning models capable of predicting video quality
+            degradation and QoS metrics in multimedia communication systems. Evaluated multiple regression and
+            prediction techniques for real-time deployment.</p>
+          <div class="project-tags">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Video Quality</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card hover-glow bg-proj-cloud-ml-website">
+          <div class="project-header">
+            <div class="folder-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="project-year">2020</div>
+          </div>
+          <h3 class="project-title">Interactive Cloud-based ML Website</h3>
+          <p class="project-desc">Automating browser-related systems for manipulating statistical data using JavaScript
+            and Firebase.</p>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Machine Learning</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS SECTION -->
+    <section id="publications" class="content-section">
+      <h2 class="section-title"><span class="terminal-prompt">></span> ./fetch_publications.sh</h2>
+      <div class="publications-list">
+
+        <a href="https://link.springer.com/book/10.1007/979-8-8688-0536-3" target="_blank"
+          class="publication-item glass-card hover-glow">
+          <div class="pub-details">
+            <div class="pub-type">Book</div>
+            <h4 class="pub-title">AI Solutions for the United Nations Sustainable Development Goals</h4>
+            <div class="pub-meta">Apress (Springer) • Oct 2024</div>
+            <p class="pub-desc">Theoretical knowledge and hands-on experience in constructing ML-based applications for
+              addressing multiple UN SDGs using
+              JavaScript.</p>
+          </div>
+          <div class="pub-media-container">
+            <div class="book-3d">
+              <div class="book-cover">
+                <img src="/cover-ai-sdgs.png" alt="AI Solutions Book Cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
+                <div class="book-cover-placeholder" style="display:none;">
+                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
+                  <span class="placeholder-icon">🌐</span>
+                  <span class="placeholder-publisher">Apress</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://link.springer.com/book/10.1007/979-8-8688-0354-3" target="_blank"
+          class="publication-item glass-card hover-glow">
+          <div class="pub-details">
+            <div class="pub-type">Book</div>
+            <h4 class="pub-title">Machine Learning For Network Traffic and Video Quality Analysis</h4>
+            <div class="pub-meta">Apress (Springer) • Jun 2024</div>
+            <p class="pub-desc">Building ML-based NTMA and VQA applications using JavaScript.</p>
+          </div>
+          <div class="pub-media-container">
+            <div class="book-3d">
+              <div class="book-cover">
+                <img src="/cover-ml-traffic.png" alt="ML Network Traffic Book Cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
+                <div class="book-cover-placeholder" style="display:none;">
+                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
+                  <span class="placeholder-icon">📈</span>
+                  <span class="placeholder-publisher">Apress</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://link.springer.com/article/10.1007/s41060-024-00548-3" target="_blank"
+          class="publication-item glass-card hover-glow">
+          <div class="pub-details">
+            <div class="pub-type">Paper</div>
+            <h4 class="pub-title">Performance analysis of collaborative real-time video QoS prediction</h4>
+            <div class="pub-meta">Springer's International Journal of Data Science and Analytics • Apr 2024</div>
+            <p class="pub-desc">End-to-end framework where ML and DL are used to forecast the behaviour of network
+              traffic
+              parameters
+              and video quality of service in a live video streaming environment.</p>
+          </div>
+          <div class="pub-media-container">
+            <div class="book-3d">
+              <div class="book-cover">
+                <img src="/cover-ijdsa.png" alt="Journal of Data Science and Analytics Cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
+                <div class="book-cover-placeholder" style="display:none;">
+                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
+                  <span class="placeholder-icon">📊</span>
+                  <span class="placeholder-publisher">IJDSA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.emerald.com/books/edited-volume/17362/chapter-abstract/94328159/Leveraging-the-Power-of-Blockchain-in-Industry-4-0?redirectedFrom=fulltext"
+          target="_blank" class="publication-item glass-card hover-glow">
+          <div class="pub-details">
+            <div class="pub-type">Book Chapter</div>
+            <h4 class="pub-title">Leveraging the Power of Blockchain in Industry 4.0 and Intelligent Real-Time Systems
+              for
+              Achieving the SDGs</h4>
+            <div class="pub-meta">Emerald Publishing Limited • Jan 2024</div>
+            <p class="pub-desc">Analyses the application of blockchain in intelligent real-time systems such as Industry
+              4.0.</p>
+          </div>
+
+          <div class="pub-media-container">
+            <div class="book-3d">
+              <div class="book-cover">
+                <img src="/cover-emerald-blockchain.png" alt="Emerald Publishing Cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
+                <div class="book-cover-placeholder" style="display:none;">
+                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
+                  <span class="placeholder-icon">🔗</span>
+                  <span class="placeholder-publisher">Emerald</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://ieeexplore.ieee.org/document/10426119" target="_blank"
+          class="publication-item glass-card hover-glow">
+          <div class="pub-details">
+            <div class="pub-type">Paper</div>
+            <h4 class="pub-title">Implementation and Performance Analysis of a SIP Enabled Softphone System with Machine
+              Learning Based QoS Assessment</h4>
+            <div class="pub-meta">2023 Global Conference on Information Technologies and Communications (GCITC) • Dec
+              2023
+            </div>
+          </div>
+          <div class="pub-media-container">
+            <div class="paper-badge">
+              <span class="placeholder-type" style="color: var(--accent-neon);">Paper</span>
+              <span class="badge-icon">🌐</span>
+              <span class="placeholder-publisher">GCITC</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.routledge.com/Driving-5G-Mobile-Communications-with-Artificial-Intelligence-towards-6G/Milovanovic-Bojkovic-Fowdur/p/book/9781032071244"
+          target="_blank" class="publication-item glass-card hover-glow">
+          <div class="pub-details">
+            <div class="pub-type">Book Chapter</div>
+            <h4 class="pub-title">Driving 5G Mobile Communications with Artificial Intelligence towards 6G</h4>
+            <div class="pub-meta">Routledge and CRC Press (Taylor & Francis Group) • Apr 2023</div>
+            <p class="pub-desc">Enabling technologies and applications of 5G/6G powered intelligent connectivity.</p>
+          </div>
+          <div class="pub-media-container">
+            <div class="book-3d">
+              <div class="book-cover">
+                <img src="/cover-5g-6g.png" alt="5G 6G Book Cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
+                <div class="book-cover-placeholder" style="display:none;">
+                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
+                  <span class="placeholder-icon">📶</span>
+                  <span class="placeholder-publisher">CRC Press</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://ieeexplore.ieee.org/document/9965243" target="_blank"
+          class="publication-item glass-card hover-glow">
+          <div class="pub-details">
+            <div class="pub-type">Paper</div>
+            <h4 class="pub-title">A Web-Based Network Traffic Prediction and Classification Application using Machine
+              Learning</h4>
+            <div class="pub-meta">Institute of Electrical and Electronics Engineers (IEEE) • Dec 2022</div>
+          </div>
+          <div class="pub-media-container">
+            <div class="paper-badge">
+              <span class="placeholder-type" style="color: var(--accent-neon);">Paper</span>
+              <span class="badge-icon">🌐</span>
+              <span class="placeholder-publisher">IEEE</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.emerald.com/ijpcc/article-abstract/19/5/698/163363/Performance-analysis-of-a-cloud-based-network?redirectedFrom=fulltext"
+          target="_blank" class="publication-item glass-card hover-glow">
+          <div class="pub-details">
+            <div class="pub-type">Paper</div>
+            <h4 class="pub-title">Performance analysis of a cloud-based network analytics system with multiple-source
+              data
+              aggregation</h4>
+            <div class="pub-meta">International Journal of Pervasive Computing and Communications - Emerald Publishing •
+              Sep 2022</div>
+            <p class="pub-desc">Capture and analysis of network traffic using ML and DL to classify and predict traffic
+              behaviour.</p>
+          </div>
+          <div class="pub-media-container">
+            <div class="paper-badge">
+              <span class="placeholder-type" style="color: var(--accent-neon);">Paper</span>
+              <span class="badge-icon">☁️</span>
+              <span class="placeholder-publisher">Emerald</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://novapublishers.com/shop/real-time-cloud-computing-and-machine-learning-applications/"
+          target="_blank" class="publication-item glass-card hover-glow">
+          <div class="pub-details">
+            <div class="pub-type">Book</div>
+            <h4 class="pub-title">Real-Time Cloud Computing and Machine Learning Applications</h4>
+            <div class="pub-meta">Nova Science Publishers • Jul 2021</div>
+            <p class="pub-desc">Documentation of a series of apps for Android and Windows serving as network monitoring
+              and analytics tools.</p>
+          </div>
+          <div class="pub-media-container">
+            <div class="book-3d">
+              <div class="book-cover">
+                <img src="/cover-cloud-ml.png" alt="Cloud ML Book Cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
+                <div class="book-cover-placeholder" style="display:none;">
+                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
+                  <span class="placeholder-icon">☁️</span>
+                  <span class="placeholder-publisher">Nova Sci</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="content-section">
+      <h2 class="section-title"><span class="terminal-prompt">></span> grep "skills" profile.json</h2>
+      <div class="glass-card section-card">
+        <div class="skills-container">
+          <span class="skill-tag">Telecommunications</span>
+          <span class="skill-tag">Artificial Intelligence</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Neural Networks</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">Network Traffic Monitoring</span>
+          <span class="skill-tag">Video Quality Analysis</span>
+          <span class="skill-tag">LLMs & VLMs</span>
+          <span class="skill-tag">RAG</span>
+          <span class="skill-tag">Network Security</span>
+          <span class="skill-tag">Full Stack Development</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Docker</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">LB.</div>
+      <p class="footer-text">© 2026 Lavesh Babooram. All rights reserved.</p>
+      <p class="footer-subtext">System running smoothly. Connection secure.</p>
+    </div>
+  </footer>
+
+  <!-- Security Authorization Modal -->
+  <div id="security-modal" class="modal-overlay">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <span class="security-status pulse-dot-red"></span>
+        <span class="security-title">SYSTEM AUTHORIZATION LEVEL 1</span>
+      </div>
+      <p class="modal-desc">Access requires system authentication. Better ask Lavesh for the password to decrypt the
+        files:</p>
+
+      <div class="security-input-wrapper">
+        <span class="terminal-prompt">></span>
+        <input type="password" id="security-code-input" placeholder="enter passcode..." autocomplete="off">
+      </div>
+
+      <div class="modal-actions">
+        <button id="btn-cancel-auth" class="btn btn-secondary">CANCEL</button>
+        <button id="btn-submit-auth" class="btn btn-primary">AUTHENTICATE</button>
+      </div>
+
+      <div id="modal-feedback" class="modal-feedback-msg"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
