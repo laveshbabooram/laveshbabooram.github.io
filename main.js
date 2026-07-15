@@ -277,4 +277,89 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Active Transmissions Modal and Carousel Logic ---
+  const transmissionsModal = document.getElementById('transmissions-modal');
+  const btnOpenTransmissions = document.getElementById('btn-open-transmissions');
+  const btnCloseTransmissions = document.getElementById('btn-close-transmissions');
+  
+  if (transmissionsModal && btnOpenTransmissions && btnCloseTransmissions) {
+    const slides = transmissionsModal.querySelectorAll('.carousel-slide');
+    const dots = transmissionsModal.querySelectorAll('.indicator-dot');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    let currentSlide = 0;
+
+    // Show slide by index
+    function showSlide(index) {
+      if (index >= slides.length) {
+        currentSlide = 0;
+      } else if (index < 0) {
+        currentSlide = slides.length - 1;
+      } else {
+        currentSlide = index;
+      }
+
+      // Hide all slides and deactivate all dots
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      // Activate active slide and dot
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    // Open Modal
+    btnOpenTransmissions.addEventListener('click', (e) => {
+      e.preventDefault();
+      transmissionsModal.classList.add('open');
+    });
+
+    // Close Modal
+    function closeTransmissions() {
+      transmissionsModal.classList.remove('open');
+    }
+
+    btnCloseTransmissions.addEventListener('click', closeTransmissions);
+
+    // Close modal on click outside content
+    transmissionsModal.addEventListener('click', (e) => {
+      if (e.target === transmissionsModal) {
+        closeTransmissions();
+      }
+    });
+
+    // Next Slide
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+      });
+    }
+
+    // Prev Slide
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+      });
+    }
+
+    // Wire up indicator dots clicks
+    dots.forEach((dot, dotIdx) => {
+      dot.addEventListener('click', () => {
+        showSlide(dotIdx);
+      });
+    });
+
+    // Support keyboard arrow navigation when modal is open
+    document.addEventListener('keydown', (e) => {
+      if (!transmissionsModal.classList.contains('open')) return;
+      if (e.key === 'ArrowRight') {
+        showSlide(currentSlide + 1);
+      } else if (e.key === 'ArrowLeft') {
+        showSlide(currentSlide - 1);
+      } else if (e.key === 'Escape') {
+        closeTransmissions();
+      }
+    });
+  }
+
 });
