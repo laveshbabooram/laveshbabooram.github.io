@@ -16,8 +16,8 @@
     rel="stylesheet">
 
   <!-- Custom CSS -->
-  <script type="module" crossorigin src="/assets/index-BdpiTXOk.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-C6qZwloJ.css">
+  <script type="module" crossorigin src="/assets/index-BaZ5UqJd.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CeFZGrly.css">
 </head>
 
 <body>
@@ -26,13 +26,17 @@
   <div class="bg-glow bottom-right"></div>
   <div class="cursor-glow"></div>
 
+  <!-- Main Navigation -->
   <nav class="navbar">
     <a href="#" class="nav-brand">LB.</a>
     <div class="nav-links">
-      <a href="#about" class="nav-link">About</a>
+      <a href="#about" class="nav-link">Journey</a>
+      <a href="#services" class="nav-link">What I Do</a>
       <a href="#experience" class="nav-link">Experience</a>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="#publications" class="nav-link">Publications</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </div>
   </nav>
 
@@ -44,48 +48,75 @@
           <div class="status-badge">
             <span class="pulse-dot"></span> System Online
           </div>
-          <h1 class="hero-title">Lavesh <span class="text-accent">Babooram</span><span class="hero-credentials">,
-              RPEM | MSc | BEng | Author</span></h1>
+
+          <h1 class="hero-title">Lavesh <span class="text-accent">Babooram</span></h1>
+          <div class="credentials-badge">RPEM &bull; MSc &bull; BEng &bull; Author</div>
+          
           <h2 class="hero-subtitle type-effect"><span id="typewriter-text"></span><span class="cursor"></span></h2>
           <p class="hero-description">
             Bridging the gap between telecommunications systems and artificial intelligence. Specializing in network
-            traffic analysis, QoS/QoE analytics, network automation and real-time multimedia communications.
+            traffic analysis, QoS/QoE analytics, network automation, and real-time multimedia communications.
           </p>
+          
           <div class="hero-actions">
-            <a href="#" id="btn-download-cv" class="btn btn-primary">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            <a href="#" id="btn-download-cv" class="btn btn-hero btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
-              Download CV
+              <span>Download CV</span>
             </a>
-            <div class="social-links">
-              <a href="https://mu.linkedin.com/in/lavesh-babooram" target="_blank" class="social-icon">LinkedIn</a>
-              <a href="https://orcid.org/0000-0001-6403-3395" target="_blank" class="social-icon">ORCID</a>
-            </div>
-          </div>
-          <div class="hero-footnote">
-            <span class="comment-prefix">//</span> Forged from scratch without external libraries.
+
+            <button id="btn-copy-email" class="btn btn-hero btn-secondary btn-copy-email" title="Click to copy email address">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span class="email-text">laveshbabooram@gmail.com</span>
+              <span class="copy-badge">[COPY]</span>
+            </button>
+
+            <a href="https://mu.linkedin.com/in/lavesh-babooram" target="_blank" class="btn btn-hero btn-icon" title="LinkedIn Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="https://orcid.org/0000-0001-6403-3395" target="_blank" class="btn btn-hero btn-icon" title="ORCID Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>ORCID</span>
+            </a>
           </div>
         </div>
         <div class="hero-avatar">
           <div class="avatar-container glass-card">
-            <!-- Placeholder for Avatar -->
             <img src="/assets/profile-photo-DmpNVftZ.jpg" alt="Lavesh Babooram" class="avatar-img" />
             <div class="avatar-overlay"></div>
           </div>
+        </div>
       </section>
     </div>
   </div>
 
-  <main class="container">
+  <!-- ABOUT / JOURNEY SECTION (Full-Bleed Panoramic Timeline) -->
+  <section id="about" class="journey-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">How I Got Here</h2>
+        <p class="section-subtitle">Started by taking computers apart. Now I build autonomous AI systems...</p>
+      </div>
+    </div>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="content-section">
-      <h2 class="section-title"><span class="terminal-prompt">></span> ./about_me.sh</h2>
-
+    <div class="timeline-full-width-wrapper">
       <div class="timeline-track-container">
         <!-- Floating Navigation Buttons -->
         <button class="timeline-nav-btn nav-btn-left" aria-label="Scroll Left"
@@ -221,31 +252,164 @@
             </div>
           </div>
 
+          <!-- Present Node -->
           <div class="timeline-node-item node-bottom" style="margin-right: 20px;">
             <div class="timeline-circle"></div>
             <div class="timeline-card glass-card hover-glow">
-              <div class="timeline-card-year">Presently</div>
-              <h5 class="timeline-card-title">Hmmm...</h5>
-              <p class="timeline-card-desc">What's next?</p>
+              <div class="timeline-card-year">Present</div>
+              <h5 class="timeline-card-title">Hmm, what now?</h5>
+              <p class="timeline-card-desc">Currently riding the AI wave and pushing boundaries...</p>
             </div>
           </div>
 
         </div>
       </div>
+    </div>
 
-      <!-- Focus Areas banner in shell output style -->
+    <div class="container">
+      <!-- Focus Areas banner -->
       <div class="focus-areas-banner glass-card" style="padding: 1rem 1.5rem;">
-        <span class="focus-areas-tag">Focus Areas</span>
+        <span class="focus-areas-tag">Core Focus</span>
         <span class="focus-areas-text">QoE / QoS Monitoring • Video Quality Analytics • Autonomous Networks • AI
-          Research
-          in
-          Telecom</span>
+          Research in Telecom</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- WHAT I CAN DO FOR YOU SECTION -->
+    <section id="services" class="content-section">
+      <div class="section-title-wrap">
+        <h2 class="section-title">What I Can Do For You</h2>
+        <p class="section-subtitle">Custom web platforms, intelligent automation, and telemetry diagnostics.</p>
+      </div>
+
+      <div class="commercial-grid">
+        <!-- Spotlight: MiniFactory3D Platform -->
+        <div class="commercial-spotlight glass-card hover-glow">
+          <div class="spotlight-badge-row">
+            <span class="spotlight-tag">LIVE CLIENT PLATFORM</span>
+            <span class="spotlight-date">2026</span>
+          </div>
+          <div class="spotlight-content-grid">
+            <div class="spotlight-text">
+              <h3 class="spotlight-title">MiniFactory3D Web & E-Commerce Platform</h3>
+              <p class="spotlight-desc">
+                Engineered and currently managing an independent high-performance digital commerce platform and dynamic 3D design system customizer.
+              </p>
+              <div class="spotlight-metrics">
+                <div class="metric-item">
+                  <span class="metric-val">100%</span>
+                  <span class="metric-lbl">CUSTOM CODEBASE</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-val">&lt;500ms</span>
+                  <span class="metric-lbl">LOAD LATENCY</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-val">3D</span>
+                  <span class="metric-lbl">DYNAMIC CONFIG</span>
+                </div>
+              </div>
+              <div class="spotlight-actions">
+                <a href="https://www.minifactory3d.com" target="_blank" class="btn btn-hero btn-primary spotlight-btn">
+                  <span>Explore MiniFactory3D.com ↗</span>
+                </a>
+              </div>
+            </div>
+            <div class="spotlight-visual">
+              <img src="/minifactory3d-screenshot.png" alt="MiniFactory3D Platform Screenshot" class="spotlight-img">
+            </div>
+          </div>
+        </div>
+
+        <!-- Capability Cards for Businesses -->
+        <div class="capabilities-cards-row">
+          <div class="capability-card glass-card hover-glow">
+            <div class="cap-header">
+              <div class="cap-icon-svg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+              <span class="cap-code">[01]</span>
+            </div>
+            <h4 class="cap-title">AI Integration & Smart Automation</h4>
+            <p class="cap-desc">
+              Custom AI solutions, intelligent chatbots, and automated workflows designed to handle repetitive tasks, customer inquiries, and operational pipelines.
+            </p>
+            <div class="cap-tags">
+              <span class="skill-tag">Chatbots</span>
+              <span class="skill-tag">LLMs</span>
+              <span class="skill-tag">Workflow Automation</span>
+              <span class="skill-tag">Custom AI</span>
+            </div>
+          </div>
+
+          <div class="capability-card glass-card hover-glow">
+            <div class="cap-header">
+              <div class="cap-icon-svg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <span class="cap-code">[02]</span>
+            </div>
+            <h4 class="cap-title">Custom Web & Digital Platforms</h4>
+            <p class="cap-desc">
+              Fast, tailored, and sleek web development engineered for companies, startups, and brands requiring custom UI/UX, database integrations, and high-conversion architectures.
+            </p>
+            <div class="cap-tags">
+              <span class="skill-tag">Custom Web</span>
+              <span class="skill-tag">High Performance</span>
+              <span class="skill-tag">Custom UI/UX</span>
+            </div>
+          </div>
+
+          <div class="capability-card glass-card hover-glow">
+            <div class="cap-header">
+              <div class="cap-icon-svg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.93 19.07A10 10 0 0 1 12 2a10 10 0 0 1 7.07 17.07"></path>
+                  <path d="M7.76 16.24A6 6 0 0 1 12 6a6 6 0 0 1 4.24 10.24"></path>
+                  <circle cx="12" cy="18" r="2"></circle>
+                </svg>
+              </div>
+              <span class="cap-code">[03]</span>
+            </div>
+            <h4 class="cap-title">Telecom QoS & Video Analytics</h4>
+            <p class="cap-desc">
+              Specialized research and development in real-time multimedia QoS/QoE prediction, OTT platform monitoring, and network traffic diagnostic intelligence.
+            </p>
+            <div class="cap-tags">
+              <span class="skill-tag">QoS / QoE</span>
+              <span class="skill-tag">Traffic Telemetry</span>
+              <span class="skill-tag">ML Analytics</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- EXPERIENCE & EDUCATION SECTION -->
     <section id="experience" class="content-section">
-      <h2 class="section-title"><span class="terminal-prompt">></span> cat experience_log.txt</h2>
+      <div class="section-title-wrap">
+        <h2 class="section-title">Where I've Worked & Studied</h2>
+        <p class="section-subtitle">Currently immersed in AI automation for network operations, applied telecom research, and teaching at UoM.</p>
+      </div>
+
       <div class="grid-layout">
         <div class="experience-column">
           <h3 class="column-title">Work Experience</h3>
@@ -295,7 +459,7 @@
         </div>
 
         <div class="experience-column">
-          <h3 class="column-title">Education</h3>
+          <h3 class="column-title">Education & Teaching</h3>
 
           <div class="timeline-item glass-card hover-glow bg-overlay-uom-msc">
             <div class="timeline-date">Jul 2022 - Oct 2024</div>
@@ -316,9 +480,13 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- SHOWCASE PROJECTS SECTION -->
     <section id="projects" class="content-section">
-      <h2 class="section-title"><span class="terminal-prompt">></span> ls ./projects</h2>
+      <div class="section-title-wrap">
+        <h2 class="section-title">Things I've Engineered</h2>
+        <p class="section-subtitle">A collection of workshops, platforms, and production monitoring frameworks.</p>
+      </div>
+
       <div class="projects-grid">
 
         <div class="project-card glass-card hover-glow bg-proj-genai-workshop">
@@ -450,228 +618,248 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS SECTION -->
+    <!-- PUBLICATIONS & RESEARCH SECTION (TABBED 3D CYBER-BOOKSHELF) -->
     <section id="publications" class="content-section">
-      <h2 class="section-title"><span class="terminal-prompt">></span> ./publications.sh</h2>
-      <div class="publications-list">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Research & Published Books</h2>
+        <p class="section-subtitle">Authored books and peer-reviewed papers on AI, 5G/6G, and network intelligence.</p>
+      </div>
 
-        <a href="https://link.springer.com/book/10.1007/979-8-8688-0536-3" target="_blank"
-          class="publication-item glass-card hover-glow">
-          <div class="pub-details">
-            <div class="pub-type">Book</div>
-            <h4 class="pub-title">AI Solutions for the United Nations Sustainable Development Goals</h4>
-            <div class="pub-meta">Apress (Springer) • Oct 2024</div>
-            <p class="pub-desc">Theoretical knowledge and hands-on experience in constructing ML-based applications for
-              addressing multiple UN SDGs using
-              JavaScript.</p>
-          </div>
-          <div class="pub-media-container">
-            <div class="book-3d">
-              <div class="book-cover">
-                <img src="/cover-ai-sdgs.png" alt="AI Solutions Book Cover"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
-                <div class="book-cover-placeholder" style="display:none;">
-                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
-                  <span class="placeholder-icon">🌐</span>
-                  <span class="placeholder-publisher">Apress</span>
-                </div>
+      <!-- Bookshelf Category Tabs -->
+      <div class="bookshelf-tabs-nav">
+        <button class="bookshelf-tab-btn active" data-shelf="books">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          <span>Books & Book Chapters (5)</span>
+        </button>
+        <button class="bookshelf-tab-btn" data-shelf="papers">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          <span>Research Papers (4)</span>
+        </button>
+      </div>
+
+      <!-- Bookshelf Showcase Container -->
+      <div class="bookshelf-showcase glass-card">
+        
+        <!-- The 3D Stage (Books Stand Directly On The Shelf Plank) -->
+        <div class="shelf-stage">
+          
+          <!-- Shelf Group 1: Books & Chapters (Active by default) -->
+          <div class="shelf-books-row active" id="shelf-group-books">
+            
+            <!-- Book 1 -->
+            <div class="shelf-item active" 
+                 data-title="AI Solutions for the United Nations Sustainable Development Goals"
+                 data-badge="Book"
+                 data-pub="Apress (Springer) • Oct 2024"
+                 data-desc="Theoretical knowledge and hands-on experience in constructing ML-based applications for addressing multiple UN SDGs using JavaScript."
+                 data-link="https://link.springer.com/book/10.1007/979-8-8688-0536-3"
+                 data-btn="Read on Springer ↗">
+              <div class="book-3d-model">
+                <div class="book-spine"></div>
+                <img src="/cover-ai-sdgs.png" alt="AI Solutions for UN SDGs" class="book-front-cover">
+                <div class="book-contact-shadow"></div>
               </div>
+              <span class="shelf-book-label">AI Solutions UN SDGs</span>
             </div>
-          </div>
-        </a>
 
-        <a href="https://link.springer.com/book/10.1007/979-8-8688-0354-3" target="_blank"
-          class="publication-item glass-card hover-glow">
-          <div class="pub-details">
-            <div class="pub-type">Book</div>
-            <h4 class="pub-title">Machine Learning For Network Traffic and Video Quality Analysis</h4>
-            <div class="pub-meta">Apress (Springer) • Jun 2024</div>
-            <p class="pub-desc">Building ML-based NTMA and VQA applications using JavaScript.</p>
-          </div>
-          <div class="pub-media-container">
-            <div class="book-3d">
-              <div class="book-cover">
-                <img src="/cover-ml-traffic.png" alt="ML Network Traffic Book Cover"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
-                <div class="book-cover-placeholder" style="display:none;">
-                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
-                  <span class="placeholder-icon">📈</span>
-                  <span class="placeholder-publisher">Apress</span>
-                </div>
+            <!-- Book 2 -->
+            <div class="shelf-item" 
+                 data-title="Machine Learning For Network Traffic and Video Quality Analysis"
+                 data-badge="Book"
+                 data-pub="Apress (Springer) • Jun 2024"
+                 data-desc="Building ML-based network traffic monitoring, anomaly detection, and video quality analysis applications using JavaScript."
+                 data-link="https://link.springer.com/book/10.1007/979-8-8688-0354-3"
+                 data-btn="Read on Springer ↗">
+              <div class="book-3d-model">
+                <div class="book-spine"></div>
+                <img src="/cover-ml-traffic.png" alt="ML For Network Traffic" class="book-front-cover">
+                <div class="book-contact-shadow"></div>
               </div>
+              <span class="shelf-book-label">ML Network Traffic</span>
             </div>
-          </div>
-        </a>
 
-        <a href="https://link.springer.com/article/10.1007/s41060-024-00548-3" target="_blank"
-          class="publication-item glass-card hover-glow">
-          <div class="pub-details">
-            <div class="pub-type">Paper</div>
-            <h4 class="pub-title">Performance analysis of collaborative real-time video QoS prediction</h4>
-            <div class="pub-meta">Springer's International Journal of Data Science and Analytics • Apr 2024</div>
-            <p class="pub-desc">End-to-end framework where ML and DL are used to forecast the behaviour of network
-              traffic
-              parameters
-              and video quality of service in a live video streaming environment.</p>
-          </div>
-          <div class="pub-media-container">
-            <div class="book-3d">
-              <div class="book-cover">
-                <img src="/cover-ijdsa.png" alt="Journal of Data Science and Analytics Cover"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
-                <div class="book-cover-placeholder" style="display:none;">
-                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
-                  <span class="placeholder-icon">📊</span>
-                  <span class="placeholder-publisher">IJDSA</span>
-                </div>
+            <!-- Book 3 -->
+            <div class="shelf-item" 
+                 data-title="Real-Time Cloud Computing and Machine Learning Applications"
+                 data-badge="Book"
+                 data-pub="Nova Science Publishers • Jul 2021"
+                 data-desc="Comprehensive documentation of apps for Android and Windows serving as real-time network monitoring and telemetry analytics tools."
+                 data-link="https://novapublishers.com/shop/real-time-cloud-computing-and-machine-learning-applications/"
+                 data-btn="View on Nova Science ↗">
+              <div class="book-3d-model">
+                <div class="book-spine"></div>
+                <img src="/cover-cloud-ml.png" alt="Real-Time Cloud ML" class="book-front-cover">
+                <div class="book-contact-shadow"></div>
               </div>
+              <span class="shelf-book-label">Cloud Computing & ML</span>
             </div>
-          </div>
-        </a>
 
-        <a href="https://www.emerald.com/books/edited-volume/17362/chapter-abstract/94328159/Leveraging-the-Power-of-Blockchain-in-Industry-4-0?redirectedFrom=fulltext"
-          target="_blank" class="publication-item glass-card hover-glow">
-          <div class="pub-details">
-            <div class="pub-type">Book Chapter</div>
-            <h4 class="pub-title">Leveraging the Power of Blockchain in Industry 4.0 and Intelligent Real-Time Systems
-              for
-              Achieving the SDGs</h4>
-            <div class="pub-meta">Emerald Publishing Limited • Jan 2024</div>
-            <p class="pub-desc">Analyses the application of blockchain in intelligent real-time systems such as Industry
-              4.0.</p>
-          </div>
-
-          <div class="pub-media-container">
-            <div class="book-3d">
-              <div class="book-cover">
-                <img src="/cover-emerald-blockchain.png" alt="Emerald Publishing Cover"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
-                <div class="book-cover-placeholder" style="display:none;">
-                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
-                  <span class="placeholder-icon">🔗</span>
-                  <span class="placeholder-publisher">Emerald</span>
-                </div>
+            <!-- Book 4 (Chapter) -->
+            <div class="shelf-item" 
+                 data-title="Driving 5G Mobile Communications with Artificial Intelligence towards 6G"
+                 data-badge="Book Chapter"
+                 data-pub="Routledge / CRC Press (Taylor & Francis Group) • Apr 2023"
+                 data-desc="Enabling technologies, beamforming algorithms, and applications of 5G/6G powered intelligent network connectivity."
+                 data-link="https://www.routledge.com/Driving-5G-Mobile-Communications-with-Artificial-Intelligence-towards-6G/Milovanovic-Bojkovic-Fowdur/p/book/9781032071244"
+                 data-btn="View on CRC Press ↗">
+              <div class="book-3d-model">
+                <div class="book-spine"></div>
+                <img src="/cover-5g-6g.png" alt="Driving 5G Towards 6G" class="book-front-cover">
+                <div class="book-contact-shadow"></div>
               </div>
+              <span class="shelf-book-label">Driving 5G to 6G</span>
             </div>
-          </div>
-        </a>
 
-        <a href="https://ieeexplore.ieee.org/document/10426119" target="_blank"
-          class="publication-item glass-card hover-glow">
-          <div class="pub-details">
-            <div class="pub-type">Paper</div>
-            <h4 class="pub-title">Implementation and Performance Analysis of a SIP Enabled Softphone System with Machine
-              Learning Based QoS Assessment</h4>
-            <div class="pub-meta">2023 Global Conference on Information Technologies and Communications (GCITC) • Dec
-              2023
-            </div>
-          </div>
-          <div class="pub-media-container">
-            <div class="paper-badge">
-              <span class="placeholder-type" style="color: var(--accent-neon);">Paper</span>
-              <span class="badge-icon">🌐</span>
-              <span class="placeholder-publisher">GCITC</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://www.routledge.com/Driving-5G-Mobile-Communications-with-Artificial-Intelligence-towards-6G/Milovanovic-Bojkovic-Fowdur/p/book/9781032071244"
-          target="_blank" class="publication-item glass-card hover-glow">
-          <div class="pub-details">
-            <div class="pub-type">Book Chapter</div>
-            <h4 class="pub-title">Driving 5G Mobile Communications with Artificial Intelligence towards 6G</h4>
-            <div class="pub-meta">Routledge and CRC Press (Taylor & Francis Group) • Apr 2023</div>
-            <p class="pub-desc">Enabling technologies and applications of 5G/6G powered intelligent connectivity.</p>
-          </div>
-          <div class="pub-media-container">
-            <div class="book-3d">
-              <div class="book-cover">
-                <img src="/cover-5g-6g.png" alt="5G 6G Book Cover"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
-                <div class="book-cover-placeholder" style="display:none;">
-                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
-                  <span class="placeholder-icon">📶</span>
-                  <span class="placeholder-publisher">CRC Press</span>
-                </div>
+            <!-- Book 5 (Chapter) -->
+            <div class="shelf-item" 
+                 data-title="Leveraging the Power of Blockchain in Industry 4.0 and Intelligent Real-Time Systems for Achieving the SDGs"
+                 data-badge="Book Chapter"
+                 data-pub="Emerald Publishing Limited • Jan 2024"
+                 data-desc="Analyses the architectural integration of blockchain in intelligent real-time systems and Industry 4.0 for UN SDG frameworks."
+                 data-link="https://www.emerald.com/books/edited-volume/17362/chapter-abstract/94328159/Leveraging-the-Power-of-Blockchain-in-Industry-4-0?redirectedFrom=fulltext"
+                 data-btn="Read on Emerald ↗">
+              <div class="book-3d-model">
+                <div class="book-spine"></div>
+                <img src="/cover-emerald-blockchain.png" alt="Blockchain in Industry 4.0" class="book-front-cover">
+                <div class="book-contact-shadow"></div>
               </div>
+              <span class="shelf-book-label">Blockchain Industry 4.0</span>
             </div>
-          </div>
-        </a>
 
-        <a href="https://ieeexplore.ieee.org/document/9965243" target="_blank"
-          class="publication-item glass-card hover-glow">
-          <div class="pub-details">
-            <div class="pub-type">Paper</div>
-            <h4 class="pub-title">A Web-Based Network Traffic Prediction and Classification Application using Machine
-              Learning</h4>
-            <div class="pub-meta">Institute of Electrical and Electronics Engineers (IEEE) • Dec 2022</div>
           </div>
-          <div class="pub-media-container">
-            <div class="paper-badge">
-              <span class="placeholder-type" style="color: var(--accent-neon);">Paper</span>
-              <span class="badge-icon">🌐</span>
-              <span class="placeholder-publisher">IEEE</span>
-            </div>
-          </div>
-        </a>
 
-        <a href="https://www.emerald.com/ijpcc/article-abstract/19/5/698/163363/Performance-analysis-of-a-cloud-based-network?redirectedFrom=fulltext"
-          target="_blank" class="publication-item glass-card hover-glow">
-          <div class="pub-details">
-            <div class="pub-type">Paper</div>
-            <h4 class="pub-title">Performance analysis of a cloud-based network analytics system with multiple-source
-              data
-              aggregation</h4>
-            <div class="pub-meta">International Journal of Pervasive Computing and Communications - Emerald Publishing •
-              Sep 2022</div>
-            <p class="pub-desc">Capture and analysis of network traffic using ML and DL to classify and predict traffic
-              behaviour.</p>
-          </div>
-          <div class="pub-media-container">
-            <div class="paper-badge">
-              <span class="placeholder-type" style="color: var(--accent-neon);">Paper</span>
-              <span class="badge-icon">☁️</span>
-              <span class="placeholder-publisher">Emerald</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://novapublishers.com/shop/real-time-cloud-computing-and-machine-learning-applications/"
-          target="_blank" class="publication-item glass-card hover-glow">
-          <div class="pub-details">
-            <div class="pub-type">Book</div>
-            <h4 class="pub-title">Real-Time Cloud Computing and Machine Learning Applications</h4>
-            <div class="pub-meta">Nova Science Publishers • Jul 2021</div>
-            <p class="pub-desc">Documentation of a series of apps for Android and Windows serving as network monitoring
-              and analytics tools.</p>
-          </div>
-          <div class="pub-media-container">
-            <div class="book-3d">
-              <div class="book-cover">
-                <img src="/cover-cloud-ml.png" alt="Cloud ML Book Cover"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%; height:100%; object-fit:cover; border-radius:2px;">
-                <div class="book-cover-placeholder" style="display:none;">
-                  <span class="placeholder-type" style="color: var(--accent-magenta);">Book</span>
-                  <span class="placeholder-icon">☁️</span>
-                  <span class="placeholder-publisher">Nova Sci</span>
-                </div>
+          <!-- Shelf Group 2: Research Papers (Hidden by default) -->
+          <div class="shelf-books-row" id="shelf-group-papers">
+            
+            <!-- Paper 1 -->
+            <div class="shelf-item" 
+                 data-title="Performance analysis of collaborative real-time video QoS prediction"
+                 data-badge="Journal Paper"
+                 data-pub="Springer's International Journal of Data Science and Analytics • Apr 2024"
+                 data-desc="End-to-end framework using ML and Deep Learning to forecast real-time network traffic parameters and video QoS in live streaming environments."
+                 data-link="https://link.springer.com/article/10.1007/s41060-024-00548-3"
+                 data-btn="Read on Springer IJDSA ↗">
+              <div class="book-3d-model">
+                <div class="book-spine"></div>
+                <img src="/cover-ijdsa.png" alt="IJDSA Journal Paper" class="book-front-cover">
+                <div class="book-contact-shadow"></div>
               </div>
+              <span class="shelf-book-label">IJDSA Video QoS</span>
             </div>
+
+            <!-- Paper 2 -->
+            <div class="shelf-item" 
+                 data-title="Implementation and Performance Analysis of a SIP Enabled Softphone System with Machine Learning Based QoS Assessment"
+                 data-badge="Conference Paper"
+                 data-pub="2023 Global Conference on Information Technologies and Communications (GCITC) • Dec 2023"
+                 data-desc="Design and implementation of an automated SIP softphone client with embedded machine learning assessment for VoIP communications."
+                 data-link="https://ieeexplore.ieee.org/document/9611100"
+                 data-btn="Read on IEEE Xplore ↗">
+              <div class="binder-3d-model">
+                <div class="binder-spine"></div>
+                <div class="binder-body">
+                  <span class="binder-badge">GCITC 2023</span>
+                  <div class="binder-icon-wrap">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  </div>
+                  <strong class="binder-title-text">SIP Softphone ML QoS</strong>
+                  <span class="binder-foot">IEEE</span>
+                </div>
+                <div class="book-contact-shadow"></div>
+              </div>
+              <span class="shelf-book-label">SIP Softphone QoS</span>
+            </div>
+
+            <!-- Paper 3 -->
+            <div class="shelf-item" 
+                 data-title="A Web-Based Network Traffic Prediction and Classification Application using Machine Learning"
+                 data-badge="Conference Paper"
+                 data-pub="Institute of Electrical and Electronics Engineers (IEEE) • Dec 2022"
+                 data-desc="Web-based traffic classification and telemetry prediction application applying machine learning algorithms to live network captures."
+                 data-link="https://ieeexplore.ieee.org/document/9965243"
+                 data-btn="Read on IEEE Xplore ↗">
+              <div class="binder-3d-model">
+                <div class="binder-spine"></div>
+                <div class="binder-body">
+                  <span class="binder-badge">IEEE 2022</span>
+                  <div class="binder-icon-wrap">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.93 19.07A10 10 0 0 1 12 2a10 10 0 0 1 7.07 17.07"></path><path d="M7.76 16.24A6 6 0 0 1 12 6a6 6 0 0 1 4.24 10.24"></path><circle cx="12" cy="18" r="2"></circle></svg>
+                  </div>
+                  <strong class="binder-title-text">Traffic Prediction App</strong>
+                  <span class="binder-foot">IEEE</span>
+                </div>
+                <div class="book-contact-shadow"></div>
+              </div>
+              <span class="shelf-book-label">Traffic Prediction</span>
+            </div>
+
+            <!-- Paper 4 -->
+            <div class="shelf-item" 
+                 data-title="Performance analysis of a cloud-based network analytics system with multiple-source data aggregation"
+                 data-badge="Journal Paper"
+                 data-pub="International Journal of Pervasive Computing and Communications - Emerald Publishing • Sep 2022"
+                 data-desc="Multi-source data aggregation system utilizing machine learning and deep learning to classify and forecast complex network traffic patterns."
+                 data-link="https://www.emerald.com/ijpcc/article-abstract/19/5/698/163363/Performance-analysis-of-a-cloud-based-network?redirectedFrom=fulltext"
+                 data-btn="Read on Emerald IJPCC ↗">
+              <div class="binder-3d-model">
+                <div class="binder-spine"></div>
+                <div class="binder-body">
+                  <span class="binder-badge">IJPCC 2022</span>
+                  <div class="binder-icon-wrap">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                  </div>
+                  <strong class="binder-title-text">Cloud Network Analytics</strong>
+                  <span class="binder-foot">Emerald</span>
+                </div>
+                <div class="book-contact-shadow"></div>
+              </div>
+              <span class="shelf-book-label">Cloud Analytics</span>
+            </div>
+
           </div>
-        </a>
+
+          <!-- Realistic 3D Shelf Plank -->
+          <div class="shelf-plank-structure">
+            <div class="plank-surface-top"></div>
+            <div class="plank-front-face"></div>
+            <div class="plank-led-strip"></div>
+          </div>
+
+        </div>
+
+        <!-- Selected Work Inspector Card (Below Shelf) -->
+        <div class="shelf-inspector-card">
+          <div class="inspector-header">
+            <span class="inspector-badge" id="inspector-badge">Book</span>
+            <span class="inspector-publisher" id="inspector-publisher">Apress (Springer) • Oct 2024</span>
+          </div>
+          <h3 class="inspector-title" id="inspector-title">AI Solutions for the United Nations Sustainable Development Goals</h3>
+          <p class="inspector-desc" id="inspector-desc">Theoretical knowledge and hands-on experience in constructing ML-based applications for addressing multiple UN SDGs using JavaScript.</p>
+          <div class="inspector-action">
+            <a href="https://link.springer.com/book/10.1007/979-8-8688-0536-3" target="_blank" class="btn btn-hero btn-primary inspector-btn" id="inspector-btn">
+              <span>Read on Springer ↗</span>
+            </a>
+          </div>
+        </div>
 
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
+    <!-- CORE CAPABILITIES / SKILLS SECTION -->
     <section id="skills" class="content-section">
-      <h2 class="section-title"><span class="terminal-prompt">></span> grep "skills" profile.json</h2>
+      <div class="section-title-wrap">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">Core technologies, frameworks, and engineering tools.</p>
+      </div>
       <div class="glass-card section-card">
         <div class="skills-container">
           <span class="skill-tag">Telecommunications</span>
@@ -692,25 +880,44 @@
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="content-section contact-section">
+      <div class="comms-callout-banner glass-card">
+        <div class="callout-left">
+          <div class="callout-status"><span class="pulse-dot"></span> OPEN FOR NEW PROJECTS & CONSULTING</div>
+          <h3 class="callout-title">Have a project in mind or need custom AI solutions?</h3>
+          <p class="callout-sub">Let's talk and engineer a high-impact solution together.</p>
+        </div>
+        <div class="callout-right">
+          <a href="mailto:laveshbabooram@gmail.com" class="btn btn-hero btn-primary btn-callout-action">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>Get In Touch (laveshbabooram@gmail.com)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">LB.</div>
       <p class="footer-text">© 2026 Lavesh Babooram. All rights reserved.</p>
-      <p class="footer-subtext">System running smoothly. Connection secure.</p>
+      <p class="footer-subtext">There is no peace for the man who has seen what he can become.</p>
     </div>
   </footer>
 
   <!-- Security Authorization Modal -->
   <div id="security-modal" class="modal-overlay">
-    <div class="modal-content glass-card">
+    <div class="modal-content glass-card security-auth-modal">
       <div class="modal-header">
         <span class="security-status pulse-dot-red"></span>
         <span class="security-title">SYSTEM AUTHORIZATION LEVEL 1</span>
       </div>
-      <p class="modal-desc">Access requires system authentication. Better ask Lavesh for the password to decrypt the
-        files:</p>
+      <p class="modal-desc">Only Lavesh got the password currently, you should prolly ask him...</p>
 
       <div class="security-input-wrapper">
         <span class="terminal-prompt">></span>
@@ -726,80 +933,119 @@
     </div>
   </div>
 
-  <!-- Floating Live Transmission Telemetry Badge -->
+  <!-- Floating Live Transmission Badge -->
   <div id="btn-open-transmissions" class="floating-telemetry-badge hover-glow">
     <span class="pulse-dot-cyan"></span>
     <span class="telemetry-text">Latest News</span>
   </div>
 
-  <!-- Active Transmissions Modal -->
+  <!-- Active Updates Modal (Modern Clean UI) -->
   <div id="transmissions-modal" class="modal-overlay">
-    <div class="modal-content glass-card transmissions-modal-content">
-      <button class="modal-close-btn" id="btn-close-transmissions" aria-label="Close Transmissions">&times;</button>
+    <div class="modal-content glass-card transmissions-modal-content clean-news-modal">
+      <button class="modal-close-btn" id="btn-close-transmissions" aria-label="Close Updates">&times;</button>
 
-      <div class="modal-header">
-        <span class="security-status pulse-dot-cyan"></span>
-        <span class="security-title">Latest News</span>
-      </div>
-
-      <div class="carousel-container">
-        <!-- Slide 1: UoM Course -->
-        <div class="carousel-slide active">
-          <div class="dispatch-tag">Come join us...</div>
-          <h3 class="dispatch-title">Generative & Agentic AI Automation for Professionals</h3>
-          <div class="dispatch-meta">University of Mauritius • July 2026</div>
-          <div class="dispatch-media">
-            <img src="/poster-ai-course.png" alt="Generative & Agentic AI Automation Course Poster">
-          </div>
-          <p class="dispatch-desc">
-            Co-designing and launching a short course for industry leaders. Dive deep into autonomous AI agents,
-            multi-agent frameworks, n8n, local LLMs, and enterprise automation pipelines.
-          </p>
-          <div class="dispatch-actions">
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7478201448498061313/" target="_blank"
-              class="btn btn-primary dispatch-btn">
-              <span>More info...</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Slide 2: MiniFactory3D -->
-        <div class="carousel-slide">
-          <div class="dispatch-tag">I also make websites...</div>
-          <h3 class="dispatch-title">MiniFactory3D.com</h3>
-          <div class="dispatch-meta">2026</div>
-          <div class="dispatch-media">
-            <img src="/minifactory3d-screenshot.png" alt="MiniFactory3D Customizer Interface Mockup">
-          </div>
-          <p class="dispatch-desc">
-            Engineered and deployed a high-performance e-commerce platform.
-          </p>
-          <div class="dispatch-actions">
-            <a href="https://www.minifactory3d.com" target="_blank" class="btn btn-primary dispatch-btn">
-              <span>Check it out</span>
-            </a>
-          </div>
+      <div class="clean-news-header">
+        <div class="modal-header-status">
+          <span class="pulse-dot"></span>
+          <span class="modal-title-clean">Latest Updates</span>
         </div>
       </div>
 
-      <!-- Navigation Chevrons -->
-      <div class="carousel-nav">
-        <button id="carousel-prev" class="carousel-arrow" aria-label="Previous Dispatch">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-        <div class="carousel-indicator">
-          <span class="indicator-dot active"></span>
-          <span class="indicator-dot"></span>
+      <div class="clean-news-body">
+        <div class="news-top-row">
+          <div class="news-category-badge">University of Mauritius</div>
+          <span class="news-hrdc-badge">HRDC Refund Eligible • 3 Days (21 hrs)</span>
         </div>
-        <button id="carousel-next" class="carousel-arrow" aria-label="Next Dispatch">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
+
+        <h3 class="news-headline">Generative & Agentic AI Automation for Professionals</h3>
+        
+        <div class="news-batch-tracker">
+          <div class="batch-item completed">
+            <span class="batch-pill">Batch 1</span>
+            <span class="batch-status-text">Completed (1st, 8th & 22nd Aug 2026)</span>
+          </div>
+          <div class="batch-item active">
+            <span class="batch-pill">Batch 2</span>
+            <span class="batch-status-text">Currently Running (19th, 26th Sep & 3rd Oct 2026)</span>
+          </div>
+          <div class="batch-item upcoming">
+            <span class="batch-pill">Batch 3</span>
+            <span class="batch-status-text">Upcoming (Nov 2026)</span>
+          </div>
+        </div>
+
+        <div class="news-modules-grid">
+          <div class="module-mini-card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mod-svg-icon">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <div class="mod-info">
+              <strong class="mod-title">Customer Enquiries</strong>
+              <p class="mod-text">Autonomous AI agents handling support & customer replies.</p>
+            </div>
+          </div>
+
+          <div class="module-mini-card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mod-svg-icon">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <div class="mod-info">
+              <strong class="mod-title">Email Classification</strong>
+              <p class="mod-text">Automatic sorting, labeling, and email workflow triage.</p>
+            </div>
+          </div>
+
+          <div class="module-mini-card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mod-svg-icon">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+            <div class="mod-info">
+              <strong class="mod-title">Market Research</strong>
+              <p class="mod-text">Automated competitor analysis and intelligence feeds.</p>
+            </div>
+          </div>
+
+          <div class="module-mini-card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mod-svg-icon">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <div class="mod-info">
+              <strong class="mod-title">WhatsApp AI Assistant</strong>
+              <p class="mod-text">Custom conversational agents for enterprise channels.</p>
+            </div>
+          </div>
+
+          <div class="module-mini-card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mod-svg-icon">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+            <div class="mod-info">
+              <strong class="mod-title">Vision Automation</strong>
+              <p class="mod-text">Multimodal visual detection and document extraction.</p>
+            </div>
+          </div>
+
+          <div class="module-mini-card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mod-svg-icon">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+            <div class="mod-info">
+              <strong class="mod-title">Real-Time Network Analytics</strong>
+              <p class="mod-text">Performance monitoring and automated alert workflows.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="news-cta-wrap">
+          <a href="https://lnkd.in/p/dSszUS9Y" target="_blank"
+            class="btn btn-hero btn-primary news-cta-btn">
+            <span>View Course Details ↗</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>

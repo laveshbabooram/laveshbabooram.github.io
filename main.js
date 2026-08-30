@@ -86,19 +86,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Journey Timeline Horizontal Scroll Interactions ---
+  const journeySection = document.getElementById('about');
   const trackContainer = document.querySelector('.timeline-track-container');
   const leftBtn = document.querySelector('.nav-btn-left');
   const rightBtn = document.querySelector('.nav-btn-right');
 
   if (trackContainer) {
     // 1. Mouse Wheel to Horizontal Scroll
-    trackContainer.addEventListener('wheel', (evt) => {
-      // Only horizontal scroll on desktop width
-      if (window.innerWidth > 1024) {
-        evt.preventDefault();
-        trackContainer.scrollLeft += evt.deltaY;
+    const handleWheelScroll = (evt) => {
+      if (window.innerWidth > 600 && trackContainer.scrollWidth > trackContainer.clientWidth) {
+        const maxScroll = trackContainer.scrollWidth - trackContainer.clientWidth;
+        const delta = evt.deltaY || evt.deltaX;
+        
+        if (delta !== 0) {
+          const atStart = trackContainer.scrollLeft <= 2 && delta < 0;
+          const atEnd = trackContainer.scrollLeft >= maxScroll - 2 && delta > 0;
+
+          if (!atStart && !atEnd) {
+            evt.preventDefault();
+            trackContainer.scrollLeft += delta * 1.5;
+          }
+        }
       }
-    }, { passive: false });
+    };
+
+    trackContainer.addEventListener('wheel', handleWheelScroll, { passive: false });
+    if (journeySection) {
+      journeySection.addEventListener('wheel', handleWheelScroll, { passive: false });
+    }
 
     // 2. Drag to Scroll (Mouse Grabbing)
     let isDown = false;
@@ -106,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let scrollLeft;
 
     trackContainer.addEventListener('mousedown', (e) => {
-      if (window.innerWidth > 1024) {
+      if (window.innerWidth > 600) {
         isDown = true;
         trackContainer.classList.add('active-drag');
         startX = e.pageX - trackContainer.offsetLeft;
@@ -114,18 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    trackContainer.addEventListener('mouseleave', () => {
+    window.addEventListener('mouseleave', () => {
       isDown = false;
       trackContainer.classList.remove('active-drag');
     });
 
-    trackContainer.addEventListener('mouseup', () => {
+    window.addEventListener('mouseup', () => {
       isDown = false;
       trackContainer.classList.remove('active-drag');
     });
 
     trackContainer.addEventListener('mousemove', (e) => {
-      if (!isDown || window.innerWidth <= 1024) return;
+      if (!isDown || window.innerWidth <= 600) return;
       e.preventDefault();
       const x = e.pageX - trackContainer.offsetLeft;
       const walk = (x - startX) * 1.5; // scroll speed multiplier
@@ -362,4 +377,96 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- 3D Cyber-Bookshelf Tabs & Inspector Interactions ---
+  const shelfTabBtns = document.querySelectorAll('.bookshelf-tab-btn');
+  const shelfGroups = document.querySelectorAll('.shelf-books-row');
+  const inspectorBadge = document.getElementById('inspector-badge');
+  const inspectorPublisher = document.getElementById('inspector-publisher');
+  const inspectorTitle = document.getElementById('inspector-title');
+  const inspectorDesc = document.getElementById('inspector-desc');
+  const inspectorBtn = document.getElementById('inspector-btn');
+
+  function updateInspector(item) {
+    if (!item) return;
+    
+    // De-activate all items across both shelves
+    document.querySelectorAll('.shelf-item').forEach(el => el.classList.remove('active'));
+    item.classList.add('active');
+
+    const title = item.dataset.title || '';
+    const badge = item.dataset.badge || 'Work';
+    const pub = item.dataset.pub || '';
+    const desc = item.dataset.desc || '';
+    const link = item.dataset.link || '#';
+    const btnText = item.dataset.btn || 'View Publication ↗';
+
+    if (inspectorBadge) inspectorBadge.textContent = badge;
+    if (inspectorPublisher) inspectorPublisher.textContent = pub;
+    if (inspectorTitle) inspectorTitle.textContent = title;
+    if (inspectorDesc) inspectorDesc.textContent = desc;
+    if (inspectorBtn) {
+      inspectorBtn.href = link;
+      const span = inspectorBtn.querySelector('span');
+      if (span) span.textContent = btnText;
+    }
+  }
+
+  // Setup tab switcher
+  shelfTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      shelfTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const targetShelf = btn.dataset.shelf;
+      shelfGroups.forEach(group => {
+        if (group.id === `shelf-group-${targetShelf}`) {
+          group.classList.add('active');
+          // Select first item in the newly active shelf
+          const firstItem = group.querySelector('.shelf-item');
+          if (firstItem) updateInspector(firstItem);
+        } else {
+          group.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  // Setup book hover & click listeners
+  document.querySelectorAll('.shelf-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      updateInspector(item);
+    });
+
+    item.addEventListener('click', () => {
+      updateInspector(item);
+    });
+  });
+
+  // --- Quick-Copy Email Handler ---
+  const btnCopyEmail = document.getElementById('btn-copy-email');
+  if (btnCopyEmail) {
+    btnCopyEmail.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = 'laveshbabooram@gmail.com';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          const copyBadge = btnCopyEmail.querySelector('.copy-badge');
+          const originalText = copyBadge ? copyBadge.textContent : '[COPY]';
+          if (copyBadge) copyBadge.textContent = '[COPIED!]';
+          btnCopyEmail.classList.add('copied');
+
+          setTimeout(() => {
+            if (copyBadge) copyBadge.textContent = originalText;
+            btnCopyEmail.classList.remove('copied');
+          }, 2000);
+        }).catch(() => {
+          window.location.href = `mailto:${email}`;
+        });
+      } else {
+        window.location.href = `mailto:${email}`;
+      }
+    });
+  }
+
 });
+
