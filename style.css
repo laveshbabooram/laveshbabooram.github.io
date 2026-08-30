@@ -939,7 +939,7 @@ body::before {
   opacity: 0.3;
 }
 
-/* 3D Realistic Shelf Plank */
+/* 3D Realistic Shelf Plank (Single unified ledge) */
 .shelf-plank-structure {
   position: relative;
   width: 100%;
@@ -950,25 +950,19 @@ body::before {
   width: 100%;
   height: 14px;
   background: linear-gradient(90deg, #111520 0%, #1f2738 50%, #111520 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.15), 0 2px 4px rgba(0, 0, 0, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .plank-front-face {
   width: 100%;
-  height: 12px;
+  height: 14px;
   background: linear-gradient(180deg, #0e121a 0%, #06080d 100%);
-  border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
 }
 
-.plank-led-strip {
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 5%, var(--accent-neon) 50%, transparent 95%);
-  box-shadow: 0 0 16px var(--accent-neon), 0 4px 20px rgba(0, 229, 255, 0.4);
-}
-
-/* Selected Work Inspector Card */
+/* Selected Work Inspector Card (Strict Fixed Height) */
 .shelf-inspector-card {
   margin-top: 2rem;
   background: rgba(255, 255, 255, 0.02);
@@ -976,14 +970,22 @@ body::before {
   border-radius: 10px;
   padding: 1.5rem 1.75rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
+  height: 240px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .inspector-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.35rem;
+  height: 24px;
+  flex-shrink: 0;
 }
 
 .inspector-badge {
@@ -1009,20 +1011,34 @@ body::before {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   line-height: 1.35;
+  height: 3.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .inspector-desc {
   font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.55;
-  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
   max-width: 850px;
+  height: 2.7rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .inspector-action {
   display: flex;
+  height: 40px;
+  flex-shrink: 0;
 }
 
 .inspector-btn {
@@ -1031,15 +1047,88 @@ body::before {
   font-size: 0.8rem;
 }
 
-@media (max-width: 850px) {
-  .shelf-books-row {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+/* Gold Medal Award Badge */
+.medal-award-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 0.25rem;
+}
+
+.gold-medal-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD700;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+  flex-shrink: 0;
+  animation: medalPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes medalPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.4));
   }
+  50% {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.85));
+  }
+}
+
+@media (max-width: 850px) {
+  .bookshelf-showcase {
+    padding: 1.5rem 1rem 1.5rem 1rem;
+  }
+
+  .shelf-stage {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .shelf-books-row {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1.25rem;
+    min-height: 220px;
+    width: max-content;
+    min-width: 100%;
+    padding: 0.75rem 0.5rem 0 0.5rem;
+  }
+
   .shelf-item {
     flex: none;
-    width: 120px;
+    width: 110px;
+  }
+
+  .book-3d-model,
+  .binder-3d-model {
+    width: 100px;
+    height: 145px;
+  }
+
+  .shelf-plank-structure {
+    min-width: 100%;
+    width: max-content;
+  }
+
+  .shelf-inspector-card {
+    margin-top: 1rem;
+    padding: 1.25rem 1rem;
+    height: 255px;
+  }
+
+  .inspector-title {
+    font-size: 1rem;
+    height: 2.8rem;
+  }
+
+  .inspector-desc {
+    font-size: 0.82rem;
+    height: 2.6rem;
   }
 }
 
@@ -2473,5 +2562,26 @@ body::before {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    padding: 2rem 1.25rem;
+    gap: 1.5rem;
+  }
+  .callout-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .btn-callout-action {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    min-height: 44px;
+    padding: 12px 18px;
+    white-space: normal;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }

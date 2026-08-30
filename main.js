@@ -439,6 +439,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     item.addEventListener('click', () => {
       updateInspector(item);
+      if (window.innerWidth <= 850) {
+        const inspectorCard = document.querySelector('.shelf-inspector-card');
+        if (inspectorCard) {
+          inspectorCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
     });
   });
 
