@@ -65,6 +65,19 @@ function boot() {
 
   heroEntrance();
   initReveals();
+  lazyLab();
+}
+
+/* The Lab's code is a separate chunk, fetched when the section gets near. */
+function lazyLab() {
+  const el = document.querySelector('[data-lab]');
+  if (!el) return;
+  const io = new IntersectionObserver((entries) => {
+    if (!entries.some((e) => e.isIntersecting)) return;
+    io.disconnect();
+    import('./lab.js').then((m) => m.initLab(el));
+  }, { rootMargin: '700px 0px' });
+  io.observe(el);
 }
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);

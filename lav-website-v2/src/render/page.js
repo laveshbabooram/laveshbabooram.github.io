@@ -8,6 +8,7 @@
    ========================================================================= */
 import { icon, sprite } from './icons.js';
 import { batchesWithStatus, liveItem, feed, label, muYear } from './time.js';
+import { PRESETS, DEFAULT_PRESET, SCALES, LIMITS, simulate, summary, fmt } from '../js/qoe-model.js';
 
 export const esc = (s) => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -103,7 +104,7 @@ export const BOOT_SCRIPT =
    Nav
    ------------------------------------------------------------------------ */
 const SECTIONS = [
-  ['now', 'Now'], ['built', 'Built'], ['research', 'Research'], ['path', 'Path'], ['toolkit', 'Toolkit'], ['contact', 'Contact'],
+  ['now', 'Now'], ['built', 'Built'], ['research', 'Research'], ['lab', 'Lab'], ['path', 'Path'], ['toolkit', 'Toolkit'], ['contact', 'Contact'],
 ];
 
 export function renderLiveChip(site, now) {
@@ -476,7 +477,7 @@ function renderPath(site) {
   return `
 <section class="section" id="path" aria-labelledby="path-title">
   <div class="wrap">
-    ${head('04', 'Path', 'From taking computers apart to autonomous networks', 'Work, study and the milestones in between, newest first.', 'path')}
+    ${head('05', 'Path', 'From taking computers apart to autonomous networks', 'Work, study and the milestones in between, newest first.', 'path')}
     <div class="path-grid">
       <aside class="path-aside" data-reveal-group>
         <div class="filters filters-col" role="group" aria-label="Filter timeline" data-filter-for="timeline">
@@ -500,7 +501,7 @@ function renderToolkit(site) {
   return `
 <section class="section" id="toolkit" aria-labelledby="toolkit-title">
   <div class="wrap">
-    ${head('05', 'Toolkit', 'What I reach for', 'Telecom underneath, software on top, AI where it earns its place.', 'toolkit')}
+    ${head('06', 'Toolkit', 'What I reach for', 'Telecom underneath, software on top, AI where it earns its place.', 'toolkit')}
     <div class="toolkit" data-reveal-group>
       ${site.toolkit.map((g) => `
       <div class="panel tk" data-reveal>
@@ -520,7 +521,7 @@ function renderContact(site) {
   return `
 <section class="section contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    ${head('06', 'Contact', 'Got a network, a process or a product that should run itself?', 'Consulting, custom builds, training or research collaboration. Tell me what you’re trying to fix.', 'contact')}
+    ${head('07', 'Contact', 'Got a network, a process or a product that should run itself?', 'Consulting, custom builds, training or research collaboration. Tell me what you’re trying to fix.', 'contact')}
     <div class="contact-grid" data-reveal-group>
       <div class="services">
         ${site.services.map((s, i) => `
@@ -555,6 +556,80 @@ function renderContact(site) {
           <button type="button" class="btn btn-primary" data-cv-open>Request CV${icon('arrow-right')}</button>
         </div>
       </div>
+    </div>
+  </div>
+</section>`;
+}
+
+/* ---------------------------------------------------------------------------
+   04 Lab: a video-quality simulator. Prerendered with the default preset's
+   real results; src/js/lab.js (loaded near the section) makes it interactive.
+   ------------------------------------------------------------------------ */
+const LAB_CONTROLS = [
+  { k: 'rtt', label: 'Latency', tip: 'Round-trip time to the video server. Every connection set-up step costs one round trip, so latency hits start-up hardest.' },
+  { k: 'loss', label: 'Packet loss', tip: 'Share of packets lost on the way. TCP reads loss as congestion and slows down, so even 1% cuts throughput sharply.' },
+  { k: 'bw', label: 'Bandwidth', tip: 'Link capacity. The player only gets what TCP actually achieves over this link, which can be far less.' },
+  { k: 'jitter', label: 'Jitter', tip: 'How much delay and speed wobble. The player sees uneven downloads, so it may drop quality or stall.' },
+];
+const LAB_KPIS = [
+  { k: 'startup', label: 'Start-up', icon: 'clock', tip: 'From pressing play to the first frame: DNS, TCP and TLS handshakes, the manifest, then the first video segment.' },
+  { k: 'stalls', label: 'Stalls', icon: 'alert-circle', tip: 'Times playback froze to refill the buffer. Viewers forgive a slow start far more than a stall.' },
+  { k: 'quality', label: 'Quality', icon: 'tv', tip: 'The resolution the player settled on most. Adaptive bitrate picks what the connection can sustain.' },
+  { k: 'score', label: 'Viewer score', icon: 'sparkle', tip: 'Illustrative 1–5 score from resolution, start-up time, stalls and quality switches. Inspired by ITU-T P.1203, not the standard itself.' },
+];
+
+function renderLab() {
+  const preset = PRESETS.find((p) => p.id === DEFAULT_PRESET);
+  const r = simulate(preset);
+  const kpi = summary(r);
+  return `
+<section class="section" id="lab" aria-labelledby="lab-title">
+  <div class="wrap">
+    ${head('04', 'Lab', 'Why your video buffers', 'What my books and MSc are about, as a toy. Pick a network or drag the sliders, and watch a minute of streaming play out in a few seconds.', 'lab')}
+    <div data-reveal-group>
+    <div class="panel lab" data-lab data-reveal>
+      <div class="lab-presets" role="group" aria-label="Network presets">
+        ${PRESETS.map((p) => `<button type="button" class="chip" data-preset="${p.id}" aria-pressed="${p.id === preset.id}" data-tip="${esc(p.tip)}">${esc(p.label)}</button>`).join('')}
+      </div>
+      <div class="lab-grid">
+        <div class="lab-controls">
+          ${LAB_CONTROLS.map((c) => `
+          <div class="lab-ctl">
+            <div class="lab-ctl-top">
+              <label for="lab-${c.k}">${esc(c.label)}</label>
+              <button type="button" class="info" data-tip="${esc(c.tip)}" aria-label="About ${esc(c.label.toLowerCase())}">${icon('info')}</button>
+              <output class="lab-val" for="lab-${c.k}" data-val="${c.k}">${esc(fmt[c.k](preset[c.k]))}</output>
+            </div>
+            <input type="range" id="lab-${c.k}" data-k="${c.k}" min="0" max="100" step="0.5"
+              value="${SCALES[c.k].from(preset[c.k]).toFixed(1)}" aria-valuetext="${esc(fmt[c.k](preset[c.k]))}">
+            <div class="lab-ends" aria-hidden="true"><span>${esc(fmt[c.k](LIMITS[c.k][0]))}</span><span>${esc(fmt[c.k](LIMITS[c.k][1]))}</span></div>
+          </div>`).join('')}
+          <p class="lab-thr">TCP gets <b data-out="thr">${fmt.mbps(r.throughput)}</b> of <span data-out="bw">${preset.bw}</span> Mb/s
+            <button type="button" class="info" data-tip="Achievable throughput: the link capacity, capped by the loss-based TCP estimate (Mathis et al.). Long round trips plus loss can waste most of a fat pipe." aria-label="About throughput">${icon('info')}</button></p>
+        </div>
+        <div class="lab-stage">
+          <div class="lab-screen">
+            <canvas class="lab-video" aria-hidden="true"></canvas>
+            <div class="lab-hud" aria-hidden="true"><span data-out="res">${r.quality}</span><span data-out="clock">1:00 / 1:00</span></div>
+          </div>
+          <canvas class="lab-lane" aria-hidden="true"></canvas>
+          <canvas class="lab-strip" aria-hidden="true"></canvas>
+          <div class="lab-legend">
+            <span><i class="sw sw-play"></i>playing, brighter = sharper</span><span><i class="sw sw-stall"></i>stall</span><span><i class="sw sw-start"></i>start-up</span><span><i class="sw sw-buf"></i>buffer</span>
+            <button type="button" class="link-btn lab-replay" data-replay>Replay${icon('arrow-right')}</button>
+          </div>
+        </div>
+      </div>
+      <p class="sr-only" data-out="summary" aria-live="polite"></p>
+      <dl class="lab-kpis">
+        ${LAB_KPIS.map((k) => `
+        <div class="kpi lab-kpi" data-kpi="${k.k}">
+          <dt class="kpi-top"><span class="kpi-label">${esc(k.label)}</span><button type="button" class="info" data-tip="${esc(k.tip)}" aria-label="About ${esc(k.label.toLowerCase())}">${icon('info')}</button></dt>
+          <dd class="kpi-value" data-v>${esc(kpi[k.k][0])}</dd>
+          <dd class="kpi-note" data-n>${esc(kpi[k.k][1])}</dd>
+        </div>`).join('')}
+      </dl>
+    </div>
     </div>
   </div>
 </section>`;
@@ -630,6 +705,7 @@ ${renderHero(site)}
 ${renderNow(site, now)}
 ${renderBuilt(site)}
 ${renderResearch(site)}
+${renderLab()}
 ${renderPath(site)}
 ${renderToolkit(site)}
 ${renderContact(site)}

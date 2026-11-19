@@ -21,6 +21,16 @@ def check(name, ok, detail=""):
     print(f"  {'PASS' if ok else 'FAIL'}  {name}" + (f"  ({detail})" if detail else ""))
 
 
+def wait_js(pg, expr, timeout=5000):
+    """Poll a JS expression until truthy. (page.wait_for_function compiles its
+    predicate with eval, which the site's CSP correctly blocks.)"""
+    for _ in range(max(1, timeout // 100)):
+        if pg.evaluate(expr):
+            return True
+        pg.wait_for_timeout(100)
+    raise TimeoutError(f"timed out waiting for: {expr}")
+
+
 def guarded(ctx, posts):
     def route(r):
         u = r.request.url
@@ -192,6 +202,41 @@ with sync_playwright() as p:
     op = pg.evaluate("getComputedStyle(document.querySelector('.hero-name')).opacity")
     op2 = pg.evaluate("getComputedStyle(document.querySelector('#research .book')).opacity")
     check("content visible without JS", op == "1" and op2 == "1", f"hero {op}, book {op2}")
+    lab_vals = pg.evaluate("[...document.querySelectorAll('[data-kpi] [data-v]')].map(e => e.textContent)")
+    check("lab: prerendered results without JS", len(lab_vals) == 4 and all(v and v != "…" for v in lab_vals), lab_vals)
+    ctx.close()
+
+    # ---------------- lab ------------------------------------------------------
+    print("lab")
+    ctx = b.new_context(viewport={"width": 1440, "height": 900})
+    guarded(ctx, [])
+    pg = ctx.new_page()
+    errors = []
+    pg.on("pageerror", lambda e: errors.append(str(e)))
+    pg.goto(URL, wait_until="networkidle")
+    pg.evaluate("document.querySelector('[data-lab]').scrollIntoView({behavior: 'instant', block: 'center'})")
+    wait_js(pg, "document.querySelector('[data-lab]')._lab === true", timeout=5000)
+    kv = lambda: pg.evaluate("Object.fromEntries([...document.querySelectorAll('[data-kpi]')].map(e => [e.dataset.kpi, e.querySelector('[data-v]').textContent]))")
+    pg.locator('[data-preset="fibre"]').click()
+    wait_js(pg, "document.querySelector('[data-kpi=score] [data-v]').textContent !== '…'", timeout=15000)
+    fibre = kv()
+    pg.locator('[data-preset="geo"]').click()
+    pg.wait_for_timeout(300)
+    mid = kv()
+    wait_js(pg, "document.querySelector('[data-kpi=score] [data-v]').textContent !== '…'", timeout=15000)
+    geo = kv()
+    check("lab: fibre beats GEO (start-up, quality, score)",
+          float(fibre["startup"].split()[0]) < float(geo["startup"].split()[0]) and float(fibre["score"]) > float(geo["score"]) and fibre["quality"] == "2160p",
+          f"fibre {fibre} / geo {geo}")
+    check("lab: replay shows progress before the verdict", mid["score"] == "…", mid)
+    s = pg.locator("#lab-rtt")
+    s.focus()
+    before = pg.locator('[data-val="rtt"]').inner_text()
+    for _ in range(10): pg.keyboard.press("ArrowLeft")
+    after = pg.locator('[data-val="rtt"]').inner_text()
+    pressed = pg.evaluate("[...document.querySelectorAll('[data-preset]')].filter(c => c.getAttribute('aria-pressed') === 'true').length")
+    check("lab: keyboard slider changes the value and clears the preset", before != after and pressed == 0, f"{before} -> {after}, pressed {pressed}")
+    check("lab: no JS errors", not errors, "; ".join(errors[:2]))
     ctx.close()
 
     # ---------------- reduced motion -----------------------------------------
@@ -204,6 +249,12 @@ with sync_playwright() as p:
     op = pg.evaluate("getComputedStyle(document.querySelector('.hero-name')).opacity")
     pic = pg.evaluate("getComputedStyle(document.querySelector('.portrait-pic')).opacity")
     check("reduced motion: content settled immediately", op == "1" and pic == "1", f"name {op}, photo {pic}")
+    pg.locator('[data-preset="cell"]').scroll_into_view_if_needed()
+    wait_js(pg, "document.querySelector('[data-lab]')._lab === true", timeout=5000)
+    pg.locator('[data-preset="cell"]').click()
+    pg.wait_for_timeout(150)
+    sc = pg.locator("[data-kpi=score] [data-v]").inner_text()
+    check("reduced motion: lab shows the result at once", sc not in ("…", ""), sc)
     ctx.close()
 
     # ---------------- time travel ------------------------------------------

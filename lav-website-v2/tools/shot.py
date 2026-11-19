@@ -17,7 +17,7 @@ OVERFLOW = """() => {
   const W = document.documentElement.clientWidth, bad = [];
   document.querySelectorAll('body *').forEach((n) => {
     const r = n.getBoundingClientRect();
-    if (r.width && r.right > W + 1 && getComputedStyle(n).position !== 'fixed' && !n.closest('.shelf')) {
+    if (r.width && r.right > W + 1 && getComputedStyle(n).position !== 'fixed' && !n.closest('.shelf, .lab-presets')) {   // intentional sideways scrollers
       bad.push(n.tagName.toLowerCase() + '.' + ((n.getAttribute('class') || '').split(' ')[0]) + ' +' + Math.round(r.right - W) + 'px');
     }
   });
