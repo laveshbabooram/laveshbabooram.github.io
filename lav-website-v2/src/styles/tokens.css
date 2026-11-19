@@ -1,0 +1,96 @@
+/* ============================================================================
+   Design tokens: lav-ui, re-keyed for the website.
+   The one change from the house system: the accent is the site's electric
+   cyan instead of amber, and --good / --info moved off cyan so a status can
+   never be mistaken for the accent. Every colour, size and duration in the
+   other stylesheets resolves to something declared here.
+   ========================================================================= */
+
+/* Variable fonts: one file per family, weight given as a RANGE. Self-hosted
+   latin subsets (about 87 KB in total), so no third-party font requests. */
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/space-grotesk-latin.woff2') format('woff2');
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Onest';
+  src: url('/fonts/onest-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono-latin.woff2') format('woff2');
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+:root {
+  /* ---- canvas ---------------------------------------------------------- */
+  --canvas:       #070A0F;
+  --canvas-lift:  #0A0F16;
+  --surface:      #0E141C;
+  --surface-hi:   #131B25;
+  --scrim:        rgba(7, 10, 15, 0.72);
+  --scrim-deep:   rgba(3, 5, 8, 0.78);
+
+  /* ---- ink ------------------------------------------------------------- */
+  --ink:          #E8F1F8;
+  --ink-soft:     #B9CAD8;
+  --muted:        #7D94A8;
+  --faint:        #677F91;
+  --ghost:        #2A3642;   /* decorative only, never type */
+
+  /* ---- signal ---------------------------------------------------------- */
+  --accent:       #00E5FF;   /* electric cyan, the single hero accent */
+  --accent-soft:  #7DEFFF;
+  --accent-dim:   #0A7F8E;
+  --accent-ink:   #00161B;   /* text on an accent fill */
+  --good:         #4ADE80;
+  --warn:         #F2994A;
+  --risk:         #FF5A6E;
+  --info:         #9DB2FF;
+
+  --accent-tint:  rgba(0, 229, 255, 0.09);
+  --accent-line:  rgba(0, 229, 255, 0.32);
+  --accent-glow:  rgba(0, 229, 255, 0.45);
+  --good-tint:    rgba(74, 222, 128, 0.12);
+  --warn-tint:    rgba(242, 153, 74, 0.12);
+  --risk-tint:    rgba(255, 90, 110, 0.12);
+  --info-tint:    rgba(157, 178, 255, 0.12);
+
+  /* ---- lines & glass --------------------------------------------------- */
+  --line:         rgba(232, 241, 248, 0.09);
+  --line-soft:    rgba(232, 241, 248, 0.05);
+  --line-hi:      rgba(232, 241, 248, 0.16);
+  --wash:         rgba(232, 241, 248, 0.03);
+  --glass:        rgba(14, 20, 28, 0.72);
+  --glass-blur:   18px;
+  --shadow:       0 24px 60px -24px rgba(0, 0, 0, 0.9);
+
+  /* ---- type ------------------------------------------------------------ */
+  --display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --body:    'Onest', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --mono:    'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  /* ---- motion: one curve for everything -------------------------------- */
+  --ease:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.55, 0, 0.55, 0.2);
+  --t-fast:  140ms;
+  --t-base:  240ms;
+  --t-slow:  420ms;
+
+  /* ---- geometry -------------------------------------------------------- */
+  --r-sm:  6px;
+  --r-md:  10px;
+  --r-lg:  14px;
+  --r-xl:  20px;
+
+  /* ---- layout ---------------------------------------------------------- */
+  --wrap:    1200px;
+  --gutter:  clamp(16px, 4vw, 40px);
+  --nav-h:   64px;
+  --sec-gap: clamp(88px, 11vw, 136px);
+}

@@ -32,18 +32,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      # The live site is v2 (lav-website-v2/). v1 stays in the repo root as
+      # history; to roll back, revert this file's change.
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
-          
+          cache-dependency-path: lav-website-v2/package-lock.json
+
       - name: Install dependencies
         run: npm ci
-        
+        working-directory: lav-website-v2
+
+      - name: Test
+        run: npm test
+        working-directory: lav-website-v2
+
       - name: Build site
         run: npm run build
-        
+        working-directory: lav-website-v2
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
@@ -51,7 +60,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload compiled dist directory
-          path: './dist'
+          path: './lav-website-v2/dist'
           
       - name: Deploy to GitHub Pages
         id: deployment

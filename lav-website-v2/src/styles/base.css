@@ -1,0 +1,91 @@
+/* ============================================================================
+   Base: reset, canvas, ambient field (lav-ui base, adapted for a scrolling
+   page). Load after tokens.css.
+   ========================================================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 12px);
+  -webkit-text-size-adjust: 100%;
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+/* Ambient field: two very soft washes that give the flat canvas depth
+   without ever reading as a visible gradient. Fixed, so it does not scroll. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(1100px 620px at 82% -10%, var(--accent-tint), transparent 60%),
+    radial-gradient(900px 560px at 8% 110%, var(--info-tint), transparent 62%);
+  opacity: 0.6;
+}
+main, .footer { position: relative; z-index: 1; }
+
+img, svg, canvas, picture { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; text-align: inherit; }
+ul, ol { list-style: none; }
+input, select, textarea { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.mono { font-family: var(--mono); }
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip {
+  position: fixed;
+  left: 12px;
+  top: -64px;
+  z-index: 400;
+  padding: 10px 14px;
+  border-radius: var(--r-md);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  transition: top var(--t-base) var(--ease);
+}
+.skip:focus { top: 12px; }
+
+/* Reduced motion: drop movement, never content. motion.js also shortens
+   every timeline to ~1ms, so elements still land in their final state. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
